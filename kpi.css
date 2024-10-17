@@ -1,0 +1,449 @@
+html{
+  background-color: #060225 ;
+  color: white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  --nav-height: 86px;
+  --registration-offset: 217px;
+  --text1-offset: 287px;
+  min-height: calc(100vh - var(--nav-height));
+
+}
+.main{
+  min-height: calc(100vh - var(--nav-height));
+  --main1-height: calc(100vh - var(--nav-height));
+  --hight-1section:81px;
+}
+.nav{
+  box-sizing: border-box;
+  width: 100%;
+  height: var(--nav-height);
+  background-color: rgba(180, 105, 225, 50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Разместить элементы по разным краям */
+  padding: 0 20px; /* Добавляем отступы по бокам для текста и картинки */
+  font-size: 22px;
+  font-family: serif;
+  position: relative;
+
+}
+.button--registration{
+  position: relative;
+  top: calc(var(--registration-offset) - var(--nav-height));
+  margin: 0 auto;
+  padding: 10px 20px;
+  text-align: center;
+  background-color: #ddbffb;
+  font-size: 24px;
+  border-radius: 20px;
+  cursor: pointer;
+  width: 25vw;
+  height: 36px;
+  color: #060225;
+  display: flex;
+  justify-content: center; /* Центрируем текст по горизонтали */
+  align-items: center; 
+  display: flex;
+
+}
+
+.img--menu{
+  cursor: pointer;
+}
+
+
+.text--1{
+  position: relative;
+  font-family: 'Roboto Serif';
+  font-style: normal;
+  font-size: 34px ;
+  text-align: center;
+  width: 320px;
+  height: 93px;
+  top: calc(var(--text1-offset) - var(--nav-height));
+  margin: 0 auto;
+  padding: 10px;
+  font-weight: normal;
+}
+
+.text--2{
+  margin-top: 200px;
+  position: relative;
+  text-align: center;
+  color: rgba(255, 255, 255, 70%);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 28px;
+}
+
+
+.img--student{
+  background-image: url('img/student.webp');
+  width: 288px; 
+  height: 168px; 
+  background-size: cover; 
+  background-repeat: no-repeat;
+  position: relative;
+  border-radius: 20px;
+  margin-top: 50px;
+  left: 50%; /* Центрируем по горизонтали */
+  transform: translateX(-50%); 
+
+}
+
+nav ul {
+  list-style: none; /* Убираем точки у основного списка */
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-menu{
+  position: absolute;
+  width: 200px;
+  background-color: #ddbffb;
+  display: none;
+  z-index: 1001;
+}
+.dropdown-menu.show {
+  display: block; /* Меню отображается */
+}
+nav ul li ul li a{
+  padding: 15px 20px;
+  text-decoration: none;
+  display: block;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+}
+nav ul li ul li a:hover{
+  background: #ddbffb;
+  color: black;
+}
+
+.header-section{
+  position: relative;
+  width: 320px;
+  font-family: 'Roboto Serif';
+  font-style: normal;
+  font-size: 36px;
+  line-height: 29px;
+  text-align: center;
+  color: #FFFFFF;
+  font-weight: normal;
+  margin: 0 auto;
+  margin-bottom: 60px;
+}
+
+.container{
+  margin-bottom: 300px;
+  padding-bottom: 0;
+
+}
+
+.section-1{
+
+  position: relative;
+  padding: 0 20px;
+  margin-bottom: 15px;
+}
+.header-section1{
+  font-weight: bold;
+  font-size: 20px;
+
+}
+.text-section1{
+  font-size: 18px;
+  padding-bottom: 25px;
+}
+
+.section-row {
+  display: flex;
+  justify-content: space-between; /* Устанавливаем равные отступы между элементами */
+  margin-bottom: 20px; /* Отступ между рядами */
+  padding: 0 20px;
+}
+
+.section-item {
+  width: calc(50% - 10px); 
+  padding: 10px; /* Отступ внутри каждого элемента */
+  box-sizing: border-box; /* Учитываем отступы в ширине */
+  background-color: rgba(255, 255, 255, 0.1); /* Добавляем фоновый цвет (можно изменить) */
+  border-radius: 10px; 
+  text-align: center; 
+  margin-bottom: 20px;
+  height: 150px;
+  text-align: left;
+  border: 0.25px solid #FFFFFF;
+  background-color: rgba(15,2,37, 20%);
+}
+
+.img-section2{
+  display: block; 
+  margin-bottom: 5px;
+  
+}
+.text-section2{
+  margin: 0; 
+  font-size: 22px;
+}
+
+.subtitle{
+  font-family: 'Roboto Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 29px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: -15px;
+  margin-bottom: 40px;
+}
+
+.section-3 {
+  width: calc(100% - 40px); 
+  margin: 0 20px; 
+  background-color: #1a043f; 
+  border-radius: 20px; 
+  padding: 20px; 
+  border: 0.25px solid white;
+  box-sizing: border-box;
+  margin-top: 25px;
+}
+
+.text-section-3-1{
+  font-size: 30px;
+  font-family: 'Roboto Serif';
+  font-style: normal;
+}
+.text-section-3-2{
+  font-size: 16px;
+  font-family: 'Roboto Serif';
+  font-style: normal;
+  color: rgba(255, 255, 255, 0.7);
+}
+.text-section-3-3{
+  font-size: 20px;
+  font-family: 'Roboto Serif';
+  font-style: normal;
+}
+.img-section-3{
+  border-radius: 20px;
+  height: 200px;
+  width: 200px;
+}
+.text-section-4-1{
+  text-align: left;
+  font-size: 23px;
+  font-family: 'Roboto Serif';
+  font-style: normal;
+
+}
+.section-4{
+  width: calc(100% - 40px); 
+  margin: 0 20px; 
+  background-color: #1a043f; 
+  border-radius: 20px; 
+  padding: 20px; 
+  border: 0.25px solid white;
+  box-sizing: border-box;
+  margin-top: 25px;
+}
+.section-4-1{
+  width: 100%;
+  height: 130px;
+  border-radius: 20px; 
+  padding: 20px; 
+  background-color: #EF4646;
+  box-sizing: border-box;
+  margin-top: 25px;
+  font-size: 35px;
+  font-family: 'Roboto Serif';
+}
+.text-section-4-2{
+  font-family: 'Roboto Serif';
+  font-style: normal;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 70%);
+}
+.text-section-4-3{
+  text-align: left;
+  margin: 0;
+  padding: 20px;
+  text-decoration: none;
+  display: block;
+  color: white;
+  font-family: 'Roboto Serif';
+  font-style: normal;
+  font-size: 20px;
+  text-indent: -15px;
+}
+.section-4-2{
+  width: calc(75% - 40px);
+  height: 40px;
+  border-radius: 20px; 
+  padding: 20px; 
+  background-color: #EF4646;
+  box-sizing: border-box;
+  margin-top: 25px;
+  font-size: 25px;
+  font-family: 'Roboto Serif';
+  display: flex; /* Активируем Flexbox */
+  justify-content: center; /* Горизонтальное центрирование */
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+}
+.text-section-5-1{
+  font-size: 34px;
+
+}
+.faq-item{
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  cursor: pointer;
+  /* margin-bottom: 10px; 
+  padding: 0 20px;
+  font-size: 24px;  */
+}
+.faq-section{
+  padding: 20px;
+}
+.img-section-5{
+  transition: transform 0.3s ease;
+}
+.text-section-5-4 {
+  padding-top: 10px;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.7);
+
+}
+.text-section-5-3{
+  font-size: 22px;
+}
+
+
+fieldset{
+  border-radius: 20px; 
+  border: 0.5px solid #FFFFFF;
+  background-color: #1a043f;
+  font-family: 'Roboto', sans-serif;
+  font-size: 30px;
+  margin: 20px;
+}
+
+input[type="text"], input[type="email"], input[type="tel"] {
+  width: 100%; 
+  padding: 10px; 
+  margin-top: 10px; 
+  margin-bottom: 20px; 
+  box-sizing: border-box; 
+  border-radius: 5px; 
+  border: none; 
+  background-color: #333; 
+  border: 0.5px solid #FFFFFF;
+  background-color: #180835;
+}
+
+input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #EF4646; 
+  border: none;
+  border-radius: 5px;
+  color: white; 
+  cursor: pointer;
+  font-size: 30px;
+}
+
+input[type="submit"]:hover {
+  background-color: #c33e3e; 
+}
+
+.form-label {
+  margin-top: 10px; 
+  display: block; 
+}
+
+.checkbox-container {
+  margin-top: 10px; 
+}
+
+.checkbox-container input[type="checkbox"] {
+  margin-right: 10px; 
+  transform: scale(0.8); 
+}
+
+.checkbox-container label {
+  margin-bottom: 10px; 
+  font-size: 20px; 
+}
+
+.checkbox-container br {
+  margin-bottom: 10px; 
+}
+
+
+
+/* Контейнер для расписания */
+.schedule-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* Сетка для 5 дней и одного столбца для времени */
+  gap: 10px; /* Пробелы между ячейками */
+  max-width: 100%;
+}
+
+/* Стили для контейнера */
+.schedule-container {
+  overflow-x: auto; /* Горизонтальная прокрутка */
+  max-width: calc(100%-40px);
+  padding: 20px;
+}
+
+/* Стили для таблицы */
+.schedule {
+  width: calc(100%-40px);
+  border-collapse: collapse;
+
+}
+
+.schedule th, .schedule td {
+  border: 3px solid #FFFFFF; /* Белая обводка */
+  /* padding: 10px; */
+  text-align: center;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  background-color: #ddbffb; /* Черный фон */
+  color: #180835; /* Белый текст */
+  height: 100px; /* Увеличенная высота ячеек (в 4 раза больше) */
+  min-width: 80px;
+}
+
+/* Медиа-запросы для планшетов и компьютеров */
+@media (min-width: 768px) {
+  .schedule-container {
+    overflow-x: visible; /* Убираем прокрутку на больших экранах */
+  }
+
+  .schedule {
+    table-layout: fixed; /* Таблица фиксированной ширины */
+  }
+}
+
+@media (min-width: 1024px) {
+  .schedule th, .schedule td {
+    padding: 20px; /* Увеличиваем отступы на больших экранах */
+  }
+}
+
+
+
