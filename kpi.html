@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-<body>
+<body> 
+  
   <nav class="nav" >
     
     <ul>
@@ -322,45 +323,42 @@
   <h3 class="header-section" id="feedback">
     Відгуки наших учнів
   </h3>
-<div class="section-3">
-  <img class="img-section-3" src="img/student1.jpg" alt="student1">
-  <div class="text-container">
-      <p class="text-section-3-1">Марія</p>
-      <p class="text-section-3-2">196 балів</p>
-      <p class="text-section-3-3">Пані Наталя - найкращій педагог з української мови та літератури. Всю свою Любовь до предмета вона передала нам) хочу подякувати за кожний урок, за цю велику працю.</p>
+  <div id="reviews-container">
+    <!-- Отзывы будут динамически загружены сюда -->
   </div>
-</div>
-<div class="section-3">
-  <img class="img-section-3" src="img/student2.jpg" alt="student2">
-  <div class="text-container">
-      <p class="text-section-3-1">Ольга</p>
-      <p class="text-section-3-2">196 балів</p>
-      <p class="text-section-3-3">Пані Наталія дуже доступно пояснювала матеріал аж поки всі не зрозуміють. Кожне завдання з цьогорічного зно ми з нею проходили та розбирали під час занять.</p>
-  </div>
-</div>
-<div class="section-3">
-  <img class="img-section-3" src="img/student3.jpg" alt="student3">
-  <div class="text-container">
-      <p class="text-section-3-1">Дарина</p>
-      <p class="text-section-3-2">194 балів</p>
-      <p class="text-section-3-3">Спершу хочу подякувати за ваш неймовірний курс. Навчання відбувалося легко та цікаво)) я дуже щаслива, що одного літнього дня натрапила на сторінку brames_school в інстаграмі, де якраз проходив безкоштовний ваш безкоштовний марафон до ЗНО з біології.</p>
-  </div>
-</div>
-<div class="section-3">
-  <img class="img-section-3" src="img/student4.jpg" alt="student4">
-  <div class="text-container">
-      <p class="text-section-3-1">Вікторія</p>
-      <p class="text-section-3-2">196 балів</p>
-      <p class="text-section-3-3">Сергій дуже классний викладач. Цікаво розповідає, вміє зацікавити до сового предмету. Гарно знає свою справу, готовий допомогти в будь-яку хвилину </p>
-  </div>
-</div>
-<div class="section-3">
-  <img class="img-section-3" src="img/student5.jpg" alt="student5">
-  <div class="text-container">
-      <p class="text-section-3-1">Анастасія</p>
-      <p class="text-section-3-2">196 балів</p>
-      <p class="text-section-3-3">В мене була чудова вчителька Яна. Було дуже весело, кожен урок чекала з задоволенням. Пояснювала все дуже легко и зрозуміло. Допомагала та давала корисні поради...</p>
-  </div>
+</section>
+
+<script>
+  // Найти контейнер для отзывов
+  const reviewsContainer = document.getElementById('reviews-container');
+
+  // Запрос к JSON-серверу для получения отзывов
+  fetch('http://localhost:3000/reviews')
+    .then(response => response.json())
+    .then(data => {
+      data.forEach(review => {
+        // Создаем HTML для каждого отзыва
+        const reviewDiv = document.createElement('div');
+        reviewDiv.classList.add('review'); // Добавляем класс для стилей
+        reviewDiv.innerHTML = `
+          <div class="section-3">
+            <div class="text-container">
+                <p class="text-section-3-1"><strong>${review.student}</strong> (${review.course})</p>
+                <p class="text-section-3-2">Рейтинг: ${review.rating}</p>
+                <p class="text-section-3-3">Комментарий: ${review.comment}</p>
+            </div>
+          </div>
+        `;
+        // Добавляем каждый отзыв в контейнер
+        reviewsContainer.appendChild(reviewDiv);
+      });
+    })
+    .catch(error => {
+      console.error('Ошибка загрузки отзывов:', error);
+      reviewsContainer.innerHTML = `<p>Не удалось загрузить отзывы. Попробуйте позже.</p>`;
+    });
+</script>
+
 </div>
 </section>
 <section class="container" id="registration" name="section-3">
@@ -372,20 +370,16 @@
   </head>
   <body>
     <form>
-      <fieldset>  
-        <!-- Поле для имени -->
-        <label for="first-name" class="form-label">Ім'я:</label><br>
+      <fieldset> 
+        <label for="first-name" class="form-label">Ім'я:</label>
         <input type="text" id="first-name" name="first-name" required><br>
-  
-        <!-- Поле для фамилии -->
+
         <label for="last-name" class="form-label">Прізвище:</label><br>
         <input type="text" id="last-name" name="last-name" required><br>
-  
-        <!-- Поле для почты -->
+
         <label for="email" class="form-label">Email:</label><br>
         <input type="email" id="email" name="email" required><br>
   
-        <!-- Поле для номера телефона -->
         <label for="phone" class="form-label">Номер телефону:</label><br>
         <input type="tel" id="phone" name="phone" required><br>
   
@@ -420,76 +414,80 @@
       </fieldset>
     </form>
   </section>
-    <section class="container">
-      <h3 class="header-section">
-        Розклад
-      </h3>
-      <div class="schedule-container">
-        <table class="schedule">
-          <thead>
-            <tr>
-              <th></th> <!-- Пустая ячейка для угла таблицы -->
-              <th>Понедельник</th>
-              <th>Вторник</th>
-              <th>Среда</th>
-              <th>Четверг</th>
-              <th>Пятница</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>16:00</td>
-              <td>Група 1,
-                7/8 місць вільно </td>
-              <td>Група 3
-                2/8 місць вільно</td>
-              <td>Група 2
-                5/8 місць вільно </td>
-              <td>Група 2
-                5/8 місць вільно</td>
-              <td>Група 2
-                5/8 місць вільно </td>
-            </tr>
-            <tr>
-              <td>17:00</td>
-              <td></td>
-              <td>Информация</td>
-              <td></td>
-              <td>Информация</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>18:00</td>
-              <td></td>
-              <td>Информация</td>
-              <td></td>
-              <td>Информация</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>19:00</td>
-              <td></td>
-              <td>Информация</td>
-              <td></td>
-              <td>Информация</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>20:00</td>
-              <td></td>
-              <td>Информация</td>
-              <td></td>
-              <td>Информация</td>
-              <td></td>
-            </tr>
-            <!-- Другие строки -->
-          </tbody>
-        </table>
-      </div>
-      
+  <section class="container">
+    <h3 class="header-section" id="shedule">
+      Розклад
+    </h3>
+    <div class="schedule-container">
+      <table class="schedule">
+        <thead>
+          <tr>
+            <th>Час</th> <!-- Время занятий -->
+            <th>Понедельник</th>
+            <th>Вторник</th>
+            <th>Среда</th>
+            <th>Четверг</th>
+            <th>Пятница</th>
+          </tr>
+        </thead>
+        <tbody id="schedule-body">
+          <!-- Строки таблицы будут добавлены здесь через JavaScript -->
+        </tbody>
+      </table>
+    </div>
+  </section>
   
+  <script>
+    // Найти тело таблицы
+    const scheduleBody = document.getElementById('schedule-body');
   
-</section>
+    // Данные о днях недели
+    const daysOfWeek = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница'];
+  
+    // Запрос к JSON-серверу для получения данных о курсах
+    fetch('http://localhost:3000/courses')
+      .then(response => response.json())
+      .then(data => {
+        // Создаем строки для каждого доступного времени
+        const times = ['16:00', '17:00', '18:00', '19:00', '20:00'];
+  
+        times.forEach(time => {
+          const row = document.createElement('tr');
+  
+          // Добавляем первую ячейку с временем
+          const timeCell = document.createElement('td');
+          timeCell.textContent = time;
+          row.appendChild(timeCell);
+  
+          // Добавляем ячейки для каждого дня недели
+          daysOfWeek.forEach(day => {
+            const cell = document.createElement('td');
+            const courseForTime = data.find(course =>
+              course.availableTimes.includes(time)
+            );
+  
+            if (courseForTime) {
+              cell.innerHTML = `
+                ${courseForTime.name}, 
+                ${courseForTime.seats} мест вільно
+              `;
+            } else {
+              cell.textContent = 'Информация отсутствует'; // Если нет данных для этого времени
+            }
+  
+            row.appendChild(cell);
+          });
+  
+          // Добавляем строку в таблицу
+          scheduleBody.appendChild(row);
+        });
+      })
+      .catch(error => {
+        console.error('Ошибка загрузки данных:', error);
+        scheduleBody.innerHTML = `<tr><td colspan="6">Не удалось загрузить данные. Попробуйте позже.</td></tr>`;
+      });
+  </script>
+  
 </main>
 <script src="kpi.js"></script>
 </body>

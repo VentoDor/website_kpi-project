@@ -49,7 +49,7 @@ body{
   height: 36px;
   color: #060225;
   display: flex;
-  justify-content: center; /* Центрируем текст по горизонтали */
+  justify-content: center; 
   align-items: center; 
   display: flex;
 
@@ -112,9 +112,12 @@ nav ul {
   background-color: #ddbffb;
   display: none;
   z-index: 1001;
+  left: 0;
 }
 .dropdown-menu.show {
   display: block; /* Меню отображается */
+  width: 100vw;
+
 }
 nav ul li ul li a{
   padding: 15px 20px;
@@ -152,7 +155,9 @@ nav ul li ul li a:hover{
   position: relative;
   padding: 0 20px;
   margin-bottom: 15px;
+  
 }
+
 .header-section1{
   font-weight: bold;
   font-size: 20px;
@@ -351,6 +356,7 @@ input[type="text"], input[type="email"], input[type="tel"] {
   background-color: #333; 
   border: 0.5px solid #FFFFFF;
   background-color: #180835;
+  color: #FFFFFF;
 }
 
 input[type="submit"] {
@@ -393,27 +399,23 @@ input[type="submit"]:hover {
 }
 
 
-
-/* Контейнер для расписания */
-.schedule-container {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr); /* Сетка для 5 дней и одного столбца для времени */
-  gap: 10px; /* Пробелы между ячейками */
-  max-width: 100%;
-}
-
 /* Стили для контейнера */
-.schedule-container {
-  overflow-x: auto; /* Горизонтальная прокрутка */
-  max-width: calc(100%-40px);
+.schedule-container { 
+  overflow-x: auto; 
+  width: 100%; 
+  margin: 0 auto; 
+  box-sizing: border-box;
   padding: 20px;
 }
 
 /* Стили для таблицы */
 .schedule {
-  width: calc(100%-40px);
+  /* width: calc(100%-40px);
+  border-collapse: collapse; */
+  width: 100%; 
+  max-width: 100%; /* Растяжение таблицы на всю ширину */
   border-collapse: collapse;
-
+  margin: 0;
 }
 
 .schedule th, .schedule td {
@@ -431,11 +433,14 @@ input[type="submit"]:hover {
 /* Медиа-запросы для планшетов и компьютеров */
 @media (min-width: 768px) {
   .schedule-container {
+    width: 100%;
     overflow-x: visible; /* Убираем прокрутку на больших экранах */
+    padding: 40px;
   }
 
   .schedule {
-    table-layout: fixed; /* Таблица фиксированной ширины */
+    width: 100%; 
+    
   }
 }
 
@@ -445,5 +450,14 @@ input[type="submit"]:hover {
   }
 }
 
-
+@media (min-width: 768px) {
+  .section-1 {
+    display: flex;
+    flex-direction: column; /* Располагаем элементы в колонку */
+    align-items: center; /* Центрируем элементы по горизонтали */
+    margin: 0 auto; /* Центрируем сам контейнер */
+    box-sizing: border-box;
+    width: 100%; 
+  }
+}
 
